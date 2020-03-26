@@ -45,10 +45,10 @@ class DNN():
             term = w * x * (1-x)
             term = np.transpose(term)
 
-        psi = np.dot(term, psi)
-        psi = np.reshape(psi,(psi.shape[0],1))
+            psi = np.dot(term, psi)
+            psi = np.reshape(psi,(psi.shape[0],1))
 
-        gradients.append(psi*x_s[i-1])
+            gradients.append(psi*x_s[i-1])
 
         for i in range(len(gradients)):
             self.weights[i] -= .1*gradients[-(i+1)]
